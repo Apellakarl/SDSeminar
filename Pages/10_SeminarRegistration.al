@@ -109,6 +109,7 @@ page 123456710 "CSD Seminar Registration"
         {
             part("Seminar Details FactBox"; "CSD Seminar Details FactBox")
             {
+                Caption = 'Lines';
                 SubPageLink = "No." = field ("Seminar No.");
             }
             part("Customer Details FactBox"; "Customer Details FactBox")
