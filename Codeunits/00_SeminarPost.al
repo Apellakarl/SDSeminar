@@ -180,11 +180,11 @@ codeunit 123456700 "CSD Seminar-Post"
             SeminarJnlLine."Document Date" := "Document Date";
             SeminarJnlLine."Document No." := PstdSeminarRegHeader."No.";
             SeminarJnlLine."Charge Type" := ChargeType;
-            //SeminarJnlLine."Instructor Resource No." := "Instructor Resource No." ;
             SeminarJnlLine."Starting Date" := "Starting Date";
             SeminarJnlLine."Seminar Registration No." := PstdSeminarRegHeader."No.";
-            //SeminarJnlLine."Room Resource No." := "Room Resource No.";
+            SeminarJnlLine."Room Resource No." := "Room Resource No.";
             SeminarJnlLine."Source Type" := SeminarJnlLine."Source Type"::Seminar;
+            SeminarJnlLine."Instructor Resource No." := "Instructor Resource No.";
             SeminarJnlLine."Source No." := "Seminar No.";
             SeminarJnlLine."Source Code" := SourceCode;
             SeminarJnlLine."Reason Code" := "Reason Code";
@@ -192,7 +192,7 @@ codeunit 123456700 "CSD Seminar-Post"
             case ChargeType of 
               ChargeType::Instructor :
                 begin
-                    //Instructor.get("Instructor Resource No.");
+                    Instructor.Get("Instructor Resource No.");
                     SeminarJnlLine.Description := Instructor.Name;
                     SeminarJnlLine.Type := SeminarJnlLine.Type::Resource; 
                     SeminarJnlLine.Chargeable := false; 
@@ -202,7 +202,7 @@ codeunit 123456700 "CSD Seminar-Post"
 
               ChargeType::Room :
                 begin
-                    //Room.GET("Room Resource No."); 
+                    Room.Get("Room Resource No.");
                     SeminarJnlLine.Description := Room.Name; 
                     SeminarJnlLine.Type := SeminarJnlLine.Type::Resource; 
                     SeminarJnlLine.Chargeable := false; 
