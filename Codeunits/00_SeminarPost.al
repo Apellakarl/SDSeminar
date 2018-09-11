@@ -180,7 +180,7 @@ codeunit 123456700 "CSD Seminar-Post"
             SeminarJnlLine."Document Date" := "Document Date";
             SeminarJnlLine."Document No." := PstdSeminarRegHeader."No.";
             SeminarJnlLine."Charge Type" := ChargeType;
-           // SeminarJnlLine."Instructor Resource No." := "Instructor Resource No." ;
+            //SeminarJnlLine."Instructor Resource No." := "Instructor Resource No." ;
             SeminarJnlLine."Starting Date" := "Starting Date";
             SeminarJnlLine."Seminar Registration No." := PstdSeminarRegHeader."No.";
             //SeminarJnlLine."Room Resource No." := "Room Resource No.";
