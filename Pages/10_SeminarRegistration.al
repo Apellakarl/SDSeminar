@@ -3,9 +3,8 @@ page 123456710 "CSD Seminar Registration"
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 6 - Lab 3-1
     //     - Created new page
-    //   Chapter 8 - Lab 2 - 4
-    //   Added Action Navigate
-
+    //   Chapter 7 - Lab 5-8
+    //     - Added Post Action  
 
     Caption = 'Seminar Registration';
     PageType = Document;
@@ -35,7 +34,7 @@ page 123456710 "CSD Seminar Registration"
                 field("Seminar Name"; "Seminar Name")
                 {
                 }
-                field("Instructor Resource No."; "Instructor Code")
+                field("Instructor Resource No."; "Instructor Resource No.")
                 {
                 }
                 field("Instructor Name"; "Instructor Name")
@@ -67,7 +66,7 @@ page 123456710 "CSD Seminar Registration"
             }
             group("Seminar Room")
             {
-                field("Room Resource No."; "Room Code")
+                field("Room Resource No."; "Room Resource No.")
                 {
                 }
                 field("Room Name"; "Room Name")
@@ -109,7 +108,6 @@ page 123456710 "CSD Seminar Registration"
         {
             part("Seminar Details FactBox"; "CSD Seminar Details FactBox")
             {
-                Caption = 'Lines';
                 SubPageLink = "No." = field ("Seminar No.");
             }
             part("Customer Details FactBox"; "Customer Details FactBox")
@@ -149,6 +147,19 @@ page 123456710 "CSD Seminar Registration"
                     RunObject = Page 123456724;
                     RunPageLink = "Document No." = Field ("No.");
                 }
+            }
+        }
+        area(Processing)
+        {
+            action("&Post")
+            {
+                Caption = '&Post';
+                Image = PostDocument;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                ShortcutKey = F9;
+                RunObject = codeunit "CSD Seminar-Post (Yes/No)";
             }
         }
     }
